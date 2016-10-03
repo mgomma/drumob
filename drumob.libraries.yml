@@ -1,0 +1,23 @@
+# global assets.
+main:
+  version: 8.x-1.0
+  css:
+    theme:
+      css/style.css: {}
+  js:
+    scripts/scripts.js: {}
+    assets/libraries/hammer.min.js: {}
+    
+# AR.
+ar-css:
+  version: 8.x-1.0
+  css:
+    theme:
+      assets/css/ar.css: {}   
+      
+# EN.
+en-css:
+  version: 8.x-1.0
+  css:
+    theme:
+      assets/css/en.css: {}
