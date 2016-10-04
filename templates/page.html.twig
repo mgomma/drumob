@@ -98,7 +98,32 @@
                         <i class="icon-bar"></i>
                     </button>
                 </div>
-                {{ page.header }}
+
+                <nav role="navigation">
+                    <div class="navmenu navmenu-default navmenu-fixed-right offcanvas-sm offcanvas-md offcanvas-lg" id = "main-menu-offcanvas" style="padding: 5px;">
+                        <button type="button" class="navmenu-close-button" data-toggle="offcanvas" data-recalc="false" data-target=".navmenu" data-canvas="">
+                            <i class="fa fa-times" aria-hidden="true"></i>
+
+                        </button>
+                        {% if region_wells.user_info_block %}
+                            {{ region_wells.user_info_block }}
+                        {% endif %}
+
+                        {% if region_wells.mobile_visible_menu %}
+                            <div class="visible-xs visible-sm">
+                                {{ region_wells.mobile_visible_menu }}
+                            </div>
+                        {% endif %}
+                        {% if region_wells.desktop_visible_menu %}
+                            <div class="hidden-xs hidden-sm">
+                                {{ region_wells.desktop_visible_menu }}
+                            </div>
+                        {% endif %}
+                        {% if page.navigation %}
+                            {{ page.navigation }}
+                        {% endif %}
+                    </div>
+                </nav>
             </div>
         </header>
     {% endblock %}
@@ -107,7 +132,8 @@
 
 {# Main #}
 {% block main %}
-    <div role="main" class="main-container {{ container }} js-quickedit-main-content">
+    <div role="main" class="main-container container js-quickedit-main-content">
+        {{ page.header }}
         <div class="row">
 
             {# Sidebar First #}
@@ -133,7 +159,7 @@
                 {# Highlighted #}
                 {% if page.highlighted %}
                     {% block highlighted %}
-                        <div class="highlighted">{{ page.highlighted }}</div>
+                        <div class="highlighted jumbotron">{{ page.highlighted }}</div>
                     {% endblock %}
                 {% endif %}
 
@@ -144,17 +170,31 @@
                     {% endblock %}
                 {% endif %}
 
-                {# Action Links #}
-                {% if action_links %}
-                    {% block action_links %}
-                        <ul class="action-links">{{ action_links }}</ul>
-                    {% endblock %}
+                {{ title_prefix }}
+
+                {% if show_node_heading %}
+                    <h1 class="page-header">{{ title }}</h1>
+                {% endif %}
+
+                {{ title_suffix }}
+
+                {{ messages }}
+
+                {% if tabs %}
+                    {{ tabs }}
                 {% endif %}
 
                 {# Help #}
                 {% if page.help %}
                     {% block help %}
                         {{ page.help }}
+                    {% endblock %}
+                {% endif %}
+
+                {# Action Links #} 
+                {% if action_links %}
+                    {% block action_links %}
+                        <ul class="action-links">{{ action_links }}</ul>
                     {% endblock %}
                 {% endif %}
 
@@ -187,10 +227,12 @@
                         <!-- footer buttons, loaded from the template -->
                         {% if footer_buttons|length %} 
                             {% for button in footer_buttons %} 
-                                <a class="btn btn-default navbar-btn" href="{{ button.href }}" >
-                                    <i class="linkicon__icon fa {{ button.icon }}" aria-hidden="true" ></i><br/>
-                                    <span class="linkicon__text">{{ button.title }}</span>
-                                </a>
+                                {% if button.href and button.icon and button.title %}
+                                    <a class="btn btn-default navbar-btn" href="{{ button.href }}" >
+                                        <i class="linkicon__icon fa {{ button.icon }}" aria-hidden="true" ></i><br/>
+                                        <span class="linkicon__text">{{ button.title }}</span>
+                                    </a>
+                                {% endif %}
                                 {{ button }}
                             {% endfor %}
                         {% endif %}

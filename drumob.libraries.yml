@@ -4,20 +4,9 @@ main:
   css:
     theme:
       css/style.css: {}
+      assets/libraries/css/jasny-bootstrap.min.css: {}
+      color/color.css: {}
   js:
-    scripts/scripts.js: {}
     assets/libraries/hammer.min.js: {}
-    
-# AR.
-ar-css:
-  version: 8.x-1.0
-  css:
-    theme:
-      assets/css/ar.css: {}   
-      
-# EN.
-en-css:
-  version: 8.x-1.0
-  css:
-    theme:
-      assets/css/en.css: {}
+    assets/libraries/jasny-bootstrap.min.js: {}
+    scripts/scripts.js: {}

@@ -19,7 +19,7 @@ function drumob_variables(&$variables){
   CacheableMetadata::createFromRenderArray($variables)
     ->addCacheableDependency($theme_settings)
     ->applyTo($variables);
-  
+//  echo '<pre>'; print_r($theme_settings->getOriginal()); exit;
   return $theme_settings->getOriginal();
 }
 
@@ -27,6 +27,9 @@ function drumob_variables(&$variables){
  * Implements hook_preprocess_HOOK() for html.html.twig.
  */
 function drumob_preprocess_html(array &$variables) {
+   if (\Drupal::moduleHandler()->moduleExists('color')) {
+//    _color_html_alter($variables);
+  }
 //  drumob_extend_variables($variables);
   /* Add class to html tag */
   //$variables['html_attributes']->addClass('no-js');
@@ -57,6 +60,9 @@ function drumob_page_attachments_alter(array &$page) {
  * Implements hook_preprocess_page() for page.html.twig.
  */
 function drumob_preprocess_page(array &$variables) {
+  if (\Drupal::moduleHandler()->moduleExists('color')) {
+//    _color_page_alter($variables);
+  }
   //get all theme variables in on array.
   $drumob_variables = drumob_variables($variables);
   $variables['logo'] = $drumob_variables['logo'];
@@ -64,14 +70,19 @@ function drumob_preprocess_page(array &$variables) {
   // to the page render variables
   // Header left and right:
   $variables['header_buttons_left'] = $drumob_variables['toolbar_settings']['header_links'];
-
+  $variables['region_wells'] = $drumob_variables['region_wells'];
   // footer 1-5:
   $variables['footer_buttons'] = [];
   for($i = 1; $i <= 5; $i++){
+    $button_attr_arr = [];
     foreach(['link', 'title', 'href'] as $attr){
       $link_key = 'link_'.$attr.'_1';
-      $variables['footer_buttons'][$i][$attr] = $drumob_variables['footer_links'][$link_key];
+      if(isset($drumob_variables['footer_links'][$link_key])){
+      $button_attr_arr[$attr] = $drumob_variables['footer_links'][$link_key];
+      }
+//      $variables['footer_buttons'][$i][$attr] = $drumob_variables['footer_links'][$link_key];
     }
+    $variables['footer_buttons'][$i] = array_diff($button_attr_arr, [NULL]);
   }
   $variables['show_node_heading'] = $drumob_variables['theme_settings']['show_node_heading'];
   
