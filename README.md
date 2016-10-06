@@ -1,3 +1,15 @@
+
+#D8 port upgrade notes
+
+- Fontawesome and jquery_update do not have D8 port so added font awesome from cdn and used default jquery version from drupal.
+- Some blocks missing D8 like secondary and primary menu.
+- Due to missing blocks so some front end restructure needed.
+- Bootstrap D8 port have some enhancements and rely on html5 elements.
+- Theme settings and preprocessing rewritten so test your configuration.
+- Totally removed all markup from drumob.theme to .twig files.
+- Add block--system-branding-block.html.twig and region--content.html.twig plus html.html.twig and page.tpl.twig See templates folder.
+
+
 # DruMob ( Drupal theme)
 
 ### Introduction
