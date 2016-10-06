@@ -8,7 +8,7 @@
 /**
  * Implements hook_form_system_theme_settings_alter().
  */
-function drumob_form_system_theme_settings_alter(&$form, &$form_state) {
+function drumob_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormStateInterface$form_state) {
   // Here we remove the default bootstrap theme settings
   // As we don't use the classical bootstrap navbar.
   $form['components']['navbar'] = NULL;
@@ -23,7 +23,7 @@ function drumob_form_system_theme_settings_alter(&$form, &$form_state) {
   $form['toolbar_settings'] = array(
     '#type' => 'fieldset',
     '#title' => t('Toolbar Settings'),
-    '#group' => t('bootstrap'),
+//    '#group' => t('bootstrap'),
   );
 
   $form['toolbar_settings']['show_footer_on_mobile_only'] = array(
@@ -169,7 +169,7 @@ function drumob_form_system_theme_settings_alter(&$form, &$form_state) {
   $form['navmenu_settings'] = array(
     '#type' => 'fieldset',
     '#title' => t('Navmenu Settings'),
-    '#group' => t('bootstrap'),
+//    '#group' => t('bootstrap'),
   );
 
   $form['navmenu_settings']['navmenu_font_size'] = array(
@@ -184,21 +184,21 @@ function drumob_form_system_theme_settings_alter(&$form, &$form_state) {
   $form['loading_animation_settings'] = array(
     '#type' => 'fieldset',
     '#title' => t('Loading animation settings'),
-    '#group' => t('bootstrap'),
+//    '#group' => t('bootstrap'),
   );
 
 
-   $form['theme_settings']['show_loading_animation'] = array(
-    '#type'          => 'checkbox',
-    '#title'         => t('Show loading animation icon'),
+  $form['theme_settings']['show_loading_animation'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Show loading animation icon'),
     '#default_value' => theme_get_setting('show_loading_animation'),
   );
 
   $animated_icons = array(
-      'loading1' => 'loading1',
-      'loading2' => 'loading2',
-      'loading3' => 'loading3',
-      'loading4' => 'loading4',
+    'loading1' => 'loading1',
+    'loading2' => 'loading2',
+    'loading3' => 'loading3',
+    'loading4' => 'loading4',
     'loading5' => 'loading5',
   );
 
@@ -208,5 +208,5 @@ function drumob_form_system_theme_settings_alter(&$form, &$form_state) {
     '#options' => $animated_icons,
     '#default_value' => theme_get_setting('animation_icon'),
     '#description' => t('You can upload your custom GIf icon into DruMob assets folder')
-    );
-    }
+  );
+}
