@@ -67,6 +67,7 @@ function drumob_preprocess_page(array &$variables) {
   $variables['header_buttons_left'] = $drumob_variables['toolbar_settings']['header_links'];
   $variables['region_wells'] = $drumob_variables['region_wells'];
   // footer 1-5:
+  echo '<pre>'; print_r($variables['base_path']); exit;
   $variables['footer_buttons'] = [];
   for($i = 1; $i <= 5; $i++){
     
@@ -75,7 +76,10 @@ function drumob_preprocess_page(array &$variables) {
       $link_key = 'link_'.$attr.'_'.$i;
 
       if($drumob_variables[$link_key]){
-      $button_attr_arr[$attr] = $drumob_variables[$link_key];
+        if($attr == 'href' && !strstr($button_attr_arr[$attr], 'http://')){
+          
+        }
+        $button_attr_arr[$attr] = $drumob_variables[$link_key];
       }
     }
     if(count($button_attr_arr) == 3){

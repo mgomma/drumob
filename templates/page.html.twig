@@ -228,7 +228,7 @@
                         {% if footer_buttons|length %} 
                             {% for button in footer_buttons %} 
                                 {% if button.href and button.icon and button.title %}
-                                    <a class="btn btn-default navbar-btn" href="{{ button.href }}" >
+                                    <a class="btn btn-default navbar-btn" href="{{base_path}}{{button.href}}" >
                                         <i class="linkicon__icon fa {{ button.icon }}" aria-hidden="true" ></i><br/>
                                         <span class="linkicon__text">{{ button.title }}</span>
                                     </a>
