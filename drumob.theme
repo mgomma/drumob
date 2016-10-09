@@ -115,7 +115,7 @@ function drumob_preprocess_page(array &$variables) {
 
 //process footer buttons href
 function drumob_footer_buttons_href_process($href, $base_path){
-  if(strstr($href, 'http://')){
+  if(strstr($href, 'http://') || strstr($href, 'https://')){
     return $href;
     }
     else if($href == '<front>'){
