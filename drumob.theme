@@ -72,13 +72,15 @@ function drumob_preprocess_page(array &$variables) {
     
     $button_attr_arr = [];
     foreach(['icon', 'title', 'href'] as $attr){
-      $link_key = 'link_'.$attr.'_1';
+      $link_key = 'link_'.$attr.'_'.$i;
 
-      if(isset($drumob_variables[$link_key])){
+      if($drumob_variables[$link_key]){
       $button_attr_arr[$attr] = $drumob_variables[$link_key];
       }
     }
-    $variables['footer_buttons'][$i] = array_diff($button_attr_arr, [NULL]);
+    if(count($button_attr_arr) == 3){
+      $variables['footer_buttons'][$i] = $button_attr_arr;
+    }
   }
   $variables['show_node_heading'] = $drumob_variables['theme_settings']['show_node_heading'];
   
