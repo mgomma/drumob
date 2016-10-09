@@ -67,7 +67,6 @@ function drumob_preprocess_page(array &$variables) {
   $variables['header_buttons_left'] = $drumob_variables['toolbar_settings']['header_links'];
   $variables['region_wells'] = $drumob_variables['region_wells'];
   // footer 1-5:
-  echo '<pre>'; print_r($variables['base_path']); exit;
   $variables['footer_buttons'] = [];
   for($i = 1; $i <= 5; $i++){
     
@@ -76,10 +75,11 @@ function drumob_preprocess_page(array &$variables) {
       $link_key = 'link_'.$attr.'_'.$i;
 
       if($drumob_variables[$link_key]){
-        if($attr == 'href' && !strstr($button_attr_arr[$attr], 'http://')){
-          
+        if($attr == 'href'){
+          $button_attr_arr[$attr] = drumob_footer_buttons_href_process($drumob_variables[$link_key], $variables['base_path']);
+        }else{
+          $button_attr_arr[$attr] = $drumob_variables[$link_key];
         }
-        $button_attr_arr[$attr] = $drumob_variables[$link_key];
       }
     }
     if(count($button_attr_arr) == 3){
@@ -111,6 +111,19 @@ function drumob_preprocess_page(array &$variables) {
   if ($drumob_variables['toolbar_settings']['show_footer_on_mobile_only']) {
     $variables['footer_mobile_visibility'] = 'visible-xs visible-sm';
   }
+}
+
+//process footer buttons href
+function drumob_footer_buttons_href_process($href, $base_path){
+  if(strstr($href, 'http://')){
+    return $href;
+    }
+    else if($href == '<front>'){
+      return \Drupal\Core\Url::fromRoute('<front>')->toString();
+    }
+    else{
+      return $base_path.$href;
+    }
 }
 
 /**
