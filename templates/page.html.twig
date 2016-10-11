@@ -58,13 +58,14 @@
 #}
 
 {# inline styles #}
-<style type="text/css">
-    {{ animation_icon_css }}
-
-    {% if navmenu_font_size_css %}
-        {{ navmenu_font_size_css }}
-    {% endif %}
-</style>    
+{% if show_loading_animation %}
+    <style type="text/css">
+      body.loading{background: url("{{drumob_theme_path}}/assets/img/{{selected_animation_icon}}.gif") no-repeat 50% 20%}
+      {% if navmenu_font_size_css %}
+        .region-navigation a{font-size: {{navmenu_font_size_css}}};
+      {% endif %}
+    </style>   
+{% endif %}
 
 {% set container = theme.settings.fluid_container ? 'container-fluid' : 'container' %}
 {# Navbar #}

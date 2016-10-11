@@ -88,29 +88,18 @@ function drumob_preprocess_page(array &$variables) {
       $variables['footer_buttons'][$i] = $button_attr_arr;
     }
   }
-  $variables['show_node_heading'] = $drumob_variables['theme_settings']['show_node_heading'];
-  
-  
+  $variables['show_node_heading'] = $drumob_variables['show_node_heading'];
+  $variables['drumob_theme_path'] = drupal_get_path('theme', 'drumob');
   // Add the loading animation to the css inline.
   // So that it can be passed from the settings.
-  if ($drumob_variables['theme_settings']['show_loading_animation']) {
-    if ($selected_animation_icon = $drumob_variables['loading_animation_settings']['animation_icon']) {
-      $variables['animation_icon_css'] = 'body.loading{background: url("' . drupal_get_path('theme', 'drumob') . '/assets/img/'.$selected_animation_icon.'.gif'.'") no-repeat 50% 20%}';
-    }
-    else {
-      $variables['animation_icon_css'] = 'body.loading{background: url("' . drupal_get_path('theme', 'drumob') . '/assets/img/loading1.gif'.'") no-repeat 50% 20%}';
-    }
-  }
+  $variables['show_loading_animation'] = $drumob_variables['show_loading_animation'];
+  $variables['selected_animation_icon'] = $drumob_variables['animation_icon'] ? $drumob_variables['animation_icon'] : 'loading1';
 
   // Add the navmenu font size to the css inline.
   // So that it can be passed from the settings.
-  if ($nmfs_placeholder = $drumob_variables['navmenu_settings']['navmenu_font_size']) {
-    if (!empty($nmfs_placeholder)) {
-      $variables['navmenu_font_size_css'] = '.region-navigation a{font-size: ' . $nmfs_placeholder . '}';
-    }
-  }
+  $variables['navmenu_font_size_css'] = $drumob_variables['navmenu_font_size'] ? $drumob_variables['navmenu_font_size'] : 0;
 
-  if ($drumob_variables['toolbar_settings']['show_footer_on_mobile_only']) {
+  if ($drumob_variables['show_footer_on_mobile_only']) {
     $variables['footer_mobile_visibility'] = 'visible-xs visible-sm';
   }
 }
