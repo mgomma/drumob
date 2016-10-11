@@ -1,0 +1,20 @@
+uuid: 428a7369-dc42-4bd5-82ef-3c6583d2d4fb
+langcode: en
+status: true
+dependencies:
+  theme:
+    - drumob
+_core:
+  default_config_hash: 13GQpeITIJsp1kyPniXtWZfyFH87vb1xxJCHifL4UeE
+id: drumob_local_actions
+theme: drumob
+region: content
+weight: -8
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

@@ -1,0 +1,20 @@
+uuid: 6e523a4a-7047-48de-bb5f-2c4ac9c38e97
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+  theme:
+    - drumob
+id: userlogin
+theme: drumob
+region: sidebar_first
+weight: -5
+provider: null
+plugin: user_login_block
+settings:
+  id: user_login_block
+  label: 'User login'
+  provider: user
+  label_display: '0'
+visibility: {  }

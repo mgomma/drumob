@@ -1,0 +1,22 @@
+uuid: 19295166-b4af-44d7-b1be-439bfa706dda
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - drumob
+_core:
+  default_config_hash: 8I8iACSa0sKO3k3jlvUG1ge52rfcKX7USJAQYnzuBgg
+id: drumob_help
+theme: drumob
+region: help
+weight: -7
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  provider: help
+  label_display: '0'
+visibility: {  }

@@ -1,0 +1,22 @@
+uuid: 68aaf8d4-68e7-4210-b29c-7509104c98ff
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - drumob
+_core:
+  default_config_hash: jQQUUWN2Uxr5qZtc9zcJKBCxpKY8orN1u2HPqYYRQDI
+id: drumob_powered
+theme: drumob
+region: footer
+weight: -7
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  provider: system
+  label_display: '0'
+visibility: {  }

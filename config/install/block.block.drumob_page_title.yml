@@ -1,0 +1,20 @@
+uuid: 892dcf8c-34fa-4b57-ab42-1a495d85a5a7
+langcode: en
+status: true
+dependencies:
+  theme:
+    - drumob
+_core:
+  default_config_hash: 7rR9chwXvdM2H8OYMAYx9Zj3GGlPMrZp_M3ZA4thYTk
+id: drumob_page_title
+theme: drumob
+region: content
+weight: -8
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility: {  }

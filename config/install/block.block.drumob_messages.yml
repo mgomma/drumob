@@ -1,0 +1,22 @@
+uuid: dc51b405-db98-4a31-b8b0-e84ec7c5102d
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - drumob
+_core:
+  default_config_hash: KHQIJ7Vfl25lTjzIc7qIvnuistt-Mw2O0kG4jCofmkI
+id: drumob_messages
+theme: drumob
+region: '-1'
+weight: -4
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }
