@@ -64,7 +64,9 @@ function drumob_preprocess_page(array &$variables) {
   // Adds the set in the theme variable tooöbar buttons
   // to the page render variables
   // Header left and right:
-  $variables['header_buttons_left'] = $drumob_variables['toolbar_settings']['header_links'];
+  $variables['back_link_title'] = $drumob_variables['back_link_title'];
+  $variables['back_link_icon'] = $drumob_variables['back_link_icon'];
+
   $variables['region_wells'] = $drumob_variables['region_wells'];
   // footer 1-5:
   $variables['footer_buttons'] = [];

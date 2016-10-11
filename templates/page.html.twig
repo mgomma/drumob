@@ -76,11 +76,11 @@
         <header class="container-fluid navbar navbar-default navbar-fixed-top nav-justified no-gutters" id="header-navbar" role="banner">
             <div class="row no-gutters">
                 <div id="left-header-button" class ="col-xs-2 text-left">
-                    {% if is_front and header_buttons_left.back_link_icon and header_buttons_left.back_link_title %}
+                    {% if is_front and back_link_icon and back_link_title %}
                         <!-- placeholder for the left header button, moved here with jquery from the opened node -->
                         <a class="btn btn-default navbar-btn" href="javascript:history.back()" >
-                            <i class="linkicon__icon fa {{ header_buttons_left.back_link_icon }}" aria-hidden="true" ></i><br/>
-                            <span class="linkicon__text">{{ header_buttons_left.back_link_title }}</span>
+                            <i class="linkicon__icon fa {{ back_link_icon }}" aria-hidden="true" ></i><br/>
+                            <span class="linkicon__text">{{ back_link_title }}</span>
                         </a>
                     {% endif %}
                 </div>
