@@ -21,22 +21,21 @@ function drumob_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormS
 
   // Here the toolbar settings form.
   $form['toolbar_settings'] = array(
-    '#type' => 'fieldset',
+    '#type' => 'details',
     '#title' => t('Toolbar Settings'),
-//    '#group' => t('bootstrap'),
+    '#group' => 'bootstrap',
   );
 
-  $form['toolbar_settings']['show_footer_on_mobile_only'] = array(
+  $form['toolbar_settings']['footer']['show_footer_on_mobile_only'] = array(
     '#type' => 'checkbox',
     '#title' => t('Show footer toolbar on mobile only'),
     '#default_value' => theme_get_setting('show_footer_on_mobile_only'),
   );
 
   $form['toolbar_settings']['header_links'] = array(
-    '#type' => 'fieldset',
+    '#type' => 'details',
     '#title' => t('Header links'),
-    '#collapsible' => TRUE,
-    '#collapsed' => TRUE,
+    '#open' => TRUE,
   );
 
   $form['toolbar_settings']['header_links']['back_link_title'] = array(
@@ -54,10 +53,9 @@ function drumob_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormS
   );
 
   $form['toolbar_settings']['footer_links'] = array(
-    '#type' => 'fieldset',
+    '#type' => 'details',
     '#title' => t('Footer links'),
-    '#collapsible' => TRUE,
-    '#collapsed' => TRUE,
+    '#open' => TRUE,
   );
 
   $form['toolbar_settings']['footer_links']['link_title_1'] = array(
@@ -167,9 +165,9 @@ function drumob_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormS
 
   // Here begin the navmenu settings.
   $form['navmenu_settings'] = array(
-    '#type' => 'fieldset',
+    '#type' => 'details',
     '#title' => t('Navmenu Settings'),
-//    '#group' => t('bootstrap'),
+    '#group' => 'bootstrap',
   );
 
   $form['navmenu_settings']['navmenu_font_size'] = array(
@@ -182,9 +180,9 @@ function drumob_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormS
 // here begin the form elements for the custom loading animation
 
   $form['loading_animation_settings'] = array(
-    '#type' => 'fieldset',
+    '#type' => 'details',
     '#title' => t('Loading animation settings'),
-//    '#group' => t('bootstrap'),
+    '#group' => 'bootstrap',
   );
 
 

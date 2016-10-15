@@ -218,7 +218,7 @@
     </div>
 {% endblock %}
 
-{% if page.footer %}
+{% if page.footer or footer_buttons|length%}
     {% block footer %}
         <footer id="footer-navbar" role="banner" class="navbar navbar-default navbar-fixed-bottom {{ footer_mobile_visibility }} ">
             {{ page.footer }}
@@ -226,7 +226,6 @@
                 <div class="navbar-footer">
                     <div id="footer-button-group" class="btn-group-justified">
                         <!-- footer buttons, loaded from the template -->
-                        {% if footer_buttons|length %} 
                             {% for button in footer_buttons %} 
                                 {% if button.href and button.icon and button.title %}
                                     <a class="btn btn-default navbar-btn" href="{{button.href}}" >
@@ -236,7 +235,6 @@
                                 {% endif %}
                                 {{ button }}
                             {% endfor %}
-                        {% endif %}
                     </div>
                 </div>
             </div>
