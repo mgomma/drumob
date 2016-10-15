@@ -6,10 +6,12 @@ dependencies:
     - user
   theme:
     - drumob
+_core:
+  default_config_hash: F1POB-LH2QuVaLYFycLNwyyFVT31jWFtz4lDA7S2dDE
 id: userlogin
 theme: drumob
-region: sidebar_first
-weight: -5
+region: navigation
+weight: -1
 provider: null
 plugin: user_login_block
 settings:
