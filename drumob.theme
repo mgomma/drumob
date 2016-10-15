@@ -22,6 +22,23 @@ function drumob_variables(&$variables){
 }
 
 /**
+ * Implements hook_preprocess_HOOK() for html.html.twig.
+ */
+function drumob_preprocess_html(array &$variables) {
+   if (\Drupal::moduleHandler()->moduleExists('color')) {
+//    _color_html_alter($variables);
+  }
+//  drumob_extend_variables($variables);
+  /* Add class to html tag */
+  //$variables['html_attributes']->addClass('no-js');
+
+  // Don't display the site name twice on the front page (and potentially others)
+  /*if (isset($variables['head_title_array']['title']) && isset($variables['head_title_array']['name']) && ($variables['head_title_array']['title'] == $variables['head_title_array']['name'])) {
+    $variables['head_title'] = $variables['head_title_array']['name'];
+  }*/
+}
+
+/**
  * Implements hook_page_attachments_alter().
  */
 function drumob_page_attachments_alter(array &$page) {
