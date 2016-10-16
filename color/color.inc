@@ -78,11 +78,10 @@ $info['css'] = array('color/color.css');
  */
 
 // Files we want to copy along with the CSS files, let's define these later.
-$info['copy'] = array();
+$info['copy'] = array('logo.png');
 
 // Files used in the scheme preview.
-$info['preview_css'] = 'color/preview.css';
-$info['preview_js'] = 'color/preview.js';
+$info['preview_library'] = 'drumob/color';
 $info['preview_html'] = 'color/preview.html';
 
 // Gradients.

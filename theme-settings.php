@@ -9,7 +9,6 @@
  * Implements hook_form_system_theme_settings_alter().
  */
 function drumob_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormStateInterface$form_state) {
-    $form['#attached']['library'][] = 'drumob/color';
   // Here we remove the default bootstrap theme settings
   // As we don't use the classical bootstrap navbar.
   $form['components']['navbar'] = NULL;

@@ -1,6 +1,6 @@
-# global assets.
+# global styling and js.
 main:
-  version: 8.x-1.0
+  version: VERSION
   css:
     theme:
       css/style.css: {}
@@ -10,11 +10,13 @@ main:
     assets/libraries/hammer.min.js: {}
     assets/libraries/jasny-bootstrap.min.js: {}
     scripts/scripts.js: {}
-    
+#color    
 color:
-  version: 8.x-1.0
+  version: VERSION
   css:
     theme:
       color/preview.css: {}
   js:
     color/preview.js: {}
+  dependencies:
+    - color/drupal.color
