@@ -88,12 +88,12 @@ function drumob_preprocess_page(array &$variables) {
       $variables['footer_buttons'][$i] = $button_attr_arr;
     }
   }
-  $variables['show_node_heading'] = $drumob_variables['theme_settings']['show_node_heading'];
+  $variables['show_node_heading'] = $drumob_variables['show_node_heading'];
   $variables['drumob_theme_path'] = drupal_get_path('theme', 'drumob');
   // Add the loading animation to the css inline.
   // So that it can be passed from the settings.
-  $variables['show_loading_animation'] = $drumob_variables['theme_settings']['show_loading_animation'];
-  $variables['selected_animation_icon'] = $drumob_variables['loading_animation_settings']['animation_icon'] ? $drumob_variables['loading_animation_settings']['animation_icon'] : 'loading1';
+  $variables['show_loading_animation'] = $drumob_variables['show_loading_animation'];
+  $variables['selected_animation_icon'] = $drumob_variables['animation_icon'] ? $drumob_variables['animation_icon'] : 'loading1';
 
   // Add the navmenu font size to the css inline.
   // So that it can be passed from the settings.
