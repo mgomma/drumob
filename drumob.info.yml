@@ -5,7 +5,7 @@ package: drumob
 core: 8.x
 libraries:
   - drumob/main
-
+  - drumob/fontawesome
 base theme: bootstrap
 
 regions:

@@ -3,3 +3,6 @@
 .navbar.container, .navbar.container-fluid {margin-top: 0px;}
 .region-navigation #block-userlogin h2{clear: both;}
 .form-control {font-size: 16px;}
+.region-navigation li{list-style: none; clear: both;}
+.region-navigation li a{float: left;}
+.region-navigation ul{padding-left: 0;}

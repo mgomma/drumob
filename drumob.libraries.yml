@@ -20,3 +20,9 @@ color:
     color/preview.js: {}
   dependencies:
     - color/drupal.color
+#Fontawesome    
+fontawesome:
+  version: VERSION
+  css:
+    base:
+      'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css': { type: external }
