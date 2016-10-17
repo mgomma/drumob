@@ -6,7 +6,7 @@ insert mobile optimised toolbars, side menu and mobile header into any
 Drupal instance.
 
 ### Demo
-http://www.masarsoft.com/demo/drumob - It's recommended to open this link in 
+http://www.drumob.org/demo - It's recommended to open this link in 
 your mobile internet browser.
 
 ### Requirements
@@ -15,7 +15,7 @@ This theme requires the following:
 - Jquery Update module.
 - Font Awesome module.
 
-## D8 release only needs bootstrap fontawesome and jQuery are libraries.
+### D8 release only needs bootstrap fontawesome and jQuery are libraries.
 
 ### Installation
 Install as you would normally install a Drupal theme, be sure Bootstrap theme
